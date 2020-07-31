@@ -73,6 +73,6 @@ heroku logs -t -a <heroku-app>
 
 https://hashcode.co.kr/questions/9391/heroku%EC%97%90-django%EB%A5%BC-%EC%98%AC%EB%A6%B0-%ED%9B%84%EC%97%90-server-error-500%EC%9D%B4-%EB%B0%9C%EC%83%9D%ED%95%A9%EB%8B%88%EB%8B%A4
 <!-- ------------------------------------------CELERY--------------------------------------------- -->
-celery -A buro_shop worker -l info
+celery -A base_main worker -l info
 
-celery -A buro_shop flower
+celery -A base_main flower
