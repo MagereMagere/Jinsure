@@ -1,0 +1,25 @@
+{% load static %}
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>{% block title %}{% endblock title %}</title>
+  <!-- favicon -->
+  <!-- <link rel="icon" type="image/x-icon" href="{% static 'imgs/favicon.png' %}"> -->
+  <!-- css static -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/studio/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome-all.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+  {% block content %}
+  {% endblock content %}
+
+  <!-- SCRIPTS -->
+  <script src="{% static 'js/studio/jquery.min.js' %}"></script>
+  <script src="{% static 'js/studio/bootstrap.min.js' %}"></script>
+  <!-- END SCRIPTS -->
+</body>
+</html>
