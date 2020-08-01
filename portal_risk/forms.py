@@ -26,9 +26,9 @@ class VehicleQuoteForm(forms.Form):
 		widget=forms.NumberInput(attrs={'placeholder': 'Enter Your Phone Number', 'class' : 'form-control'}))
 	email = forms.EmailField(required=False,
 		widget=forms.TextInput(attrs={'placeholder': 'Enter Your E-Mail', 'class' : 'form-control'}))
-	value = forms.ChoiceField(required=True, choices=CAR_VALUE_CHOICES,
+	value = forms.ChoiceField(required=True, choices=CAR_VALUE_CHOICES, initial='',
 		widget=forms.Select(attrs={'class' : 'form-control'}))
-	vtype = forms.ChoiceField(required=True, choices=VEHICLE_TYPE_CHOICES,
+	vtype = forms.ChoiceField(required=True, choices=VEHICLE_TYPE_CHOICES, initial='',
 		widget=forms.Select(attrs={'class' : 'form-control'}))
-	experience = forms.ChoiceField(required=True, choices=DRIVING_EXPERIENCE,
+	experience = forms.ChoiceField(required=True, choices=DRIVING_EXPERIENCE, initial='',
 		widget=forms.Select(attrs={'class' : 'form-control'}))
