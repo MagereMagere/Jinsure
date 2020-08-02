@@ -14,14 +14,29 @@ class FileClaimVehicleTheftForm(ModelForm):
 			'class': 'form-control'
 		})
 		self.fields['phone_number'].widget.attrs.update({
-			'placeholder': 'Phone Number',
+			'placeholder': 'Phone Number...',
 			'class': 'form-control'
 		})
 		self.fields['email'].widget.attrs.update({
 			'placeholder': 'E-Mail Address',
 			'class': 'form-control'
 		})
-
+		self.fields['vehicle_registration'].widget.attrs.update({
+			'placeholder': 'Registration Number',
+			'class': 'form-control'
+		})
+		self.fields['vehicle_make'].widget.attrs.update({
+			'placeholder': 'Make',
+			'class': 'form-control'
+		})
+		self.fields['manufactured_year'].widget.attrs.update({
+			'placeholder': 'Year Vehicle Was Manufactured',
+			'class': 'form-control'
+		})
+		self.fields['hp_loan_agreements'].widget.attrs.update({
+			# 'placeholder': 'Boolean',
+			'class': 'form-control'
+		})
 	class Meta:
 		model = FileClaimVehicleTheft
 		fields = '__all__'

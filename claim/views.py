@@ -6,29 +6,27 @@ import weasyprint
 from django.template.loader import render_to_string
 from django.http import HttpResponse
 from django.conf import settings
+from django.shortcuts import get_object_or_404
 
 from .forms import FileClaimVehicleTheftForm
+from .models import FileClaimVehicleTheft
 
 # Create your views here.
-def claim(request):
+def add_claim(request):
+	# theft_form = FileClaimVehicleTheftForm(request.POST)
+
 	if request.method == 'POST':
 		theft_form = FileClaimVehicleTheftForm(request.POST)
-		if theft_form.is_valid:
-			name = theft_form.cleaned_data['name_of_insured']
-			occupation = theft_form.cleaned_data['occupation_of_insured']
-			phone_number = theft_form.cleaned_data['phone_number_of_insured']
-			email = theft_form.cleaned_data['email_of_insured']
-			vehicle_registration = theft_form.cleaned_data['vehicle_registration']
-			vehicle_make = theft_form.cleaned_data['vehicle_make']
-			manufactured_year = theft_form.cleaned_data['manufactured_year']
 
-			theft_form.save()
-			# messages.add_message(request, messages.INFO, 'Feedback Submitted.')
+		if theft_form.is_valid():
+			filing=theft_form.save()
 
-			html = render_to_string('claim/cars/pdf.html', {'theft_form': theft_form})
+			filing = get_object_or_404(FileClaimVehicleTheft, id=17)
+			html = render_to_string('claim/cars/pdf.html', {'filing': filing})
 			response = HttpResponse(content_type='application/pdf')
 			response['Content-Disposition'] = 'filename="theft_claim.pdf"'
-			weasyprint.HTML(string=html).write_pdf(response, stylesheets=[weasyprint.CSS(settings.STATIC_ROOT + "/css/pdf.css")])
+			weasyprint.HTML(string=html).write_pdf(
+				response, stylesheets=[weasyprint.CSS(settings.STATIC_ROOT + "/css/pdf.css")])
 			return response
 	else:
 		theft_form = FileClaimVehicleTheftForm()

@@ -9,21 +9,21 @@
   <br>
   <h3>Personal Information</h3>
   <p>
-    Name of Insured: {{ theft_form.name }}<br>
-    Occupation: {{ theft_form.occupation }}<br>
-    Email Address: {{ theft_form.email }}<br>
-    Phone Number: {{ theft_form.phone_number }}
+    Name of Insured: {{ filing.name }}<br>
+    Occupation: {{ filing.occupation }}<br>
+    Email Address: {{ filing.email }}<br>
+    Phone Number: {{ filing.phone_number }}
   </p>
 
   <h3>Vehicle Particulars</h3>
-  <p>Registration No: {{ theft_form.vehicle_registration }}</p>
-  <p>Vehicle Make: {{ theft_form.vehicle_make }}</p>
-  <p>Model: {{ theft_form.phone_number }}</p>
-  <p>Year Manufactured: {{ theft_form.manufactured_year }}</p>
+  <p>Registration No: {{ filing.vehicle_registration }}</p>
+  <p>Vehicle Make: {{ filing.vehicle_make }}</p>
+  <p>Model: {{ filing.phone_number }}</p>
+  <p>Year Manufactured: {{ filing.manufactured_year }}</p>
   <p>
     Is the vehicle the subject of a hire purchase or loan agreement?
     <br>
-    {{ theft_form.manufactured_year }}  
+    {{ filing.hp_loan_agreements }}  
   </p>
 </body>
 </html>
