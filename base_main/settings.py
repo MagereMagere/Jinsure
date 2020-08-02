@@ -48,8 +48,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    # 'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -82,14 +82,13 @@ WSGI_APPLICATION = 'base_main.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 # Heroku: Update database configuration from $DATABASE_URL.
 # db_from_env = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(db_from_env)
-DATABASE_URL = 'postgresql:///postgresql'
+# DATABASE_URL = 'postgresql:///postgresql'
+DATABASE_URL = 'postgres://ogcditkaagwfpx:e37b4927ef14f87db0ae28af6433f9e92564f062483818e87c963894a88a2521@ec2-107-22-7-9.compute-1.amazonaws.com:5432/dcblmf2gi3o5ji'
 DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
 
 # Password validation
@@ -132,7 +131,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
     # serves media files uploaded by users
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'media_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'media_root')
     # local path for file storage
 
 # Configure Django App for Heroku.
