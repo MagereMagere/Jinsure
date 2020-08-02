@@ -17,28 +17,28 @@
 								{% csrf_token %}
 								<div class="row">
 			            <div class="form-group col-lg-6 mb-4">
-			              {{ theft_claim_form.name }}
+			              {{ theft_form.name }}
 			            </div>
 			            <div class="form-group col-lg-6 mb-4">
-			              {{ theft_claim_form.occupation }}
+			              {{ theft_form.occupation }}
 			            </div>
 			            <div class="form-group col-lg-6 mb-4">
-			              {{ theft_claim_form.phone_number }}
+			              {{ theft_form.phone_number }}
 			            </div>
 			            <div class="form-group col-lg-6 mb-4">
-			              {{ theft_claim_form.email }}
+			              {{ theft_form.email }}
 			            </div>
 			            <div class="form-group col-lg-6 mb-4">
 			            	<text class="text-success">Registration Number</text>
-			              {{ theft_claim_form.vehicle_registration }}
+			              {{ theft_form.vehicle_registration }}
 			            </div>
 			            <div class="form-group col-lg-6 mb-4">
 			            	<text class="text-success">Vehicle Make</text>
-			            	{{ theft_claim_form.vehicle_make }}
+			            	{{ theft_form.vehicle_make }}
 			            </div>
 			            <div class="form-group col-lg-12 mb-4">
 			            	<text class="text-success">Driving Experience in Years</text>
-			              {{ theft_claim_form.manufacturer_year }}
+			              {{ theft_form.manufactured_year }}
 			            </div>
 			            <div class="form-group col-lg-12">
 			              <button class="btn btn-info btn-block" type="submit">Render Claim To PDF</button>
