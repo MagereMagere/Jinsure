@@ -21,7 +21,7 @@ def add_claim(request):
 		if theft_form.is_valid():
 			filing=theft_form.save()
 
-			filing = get_object_or_404(FileClaimVehicleTheft, id=17)
+			filing = get_object_or_404(FileClaimVehicleTheft, id=2)
 			html = render_to_string('claim/cars/pdf.html', {'filing': filing})
 			response = HttpResponse(content_type='application/pdf')
 			response['Content-Disposition'] = 'filename="theft_claim.pdf"'
